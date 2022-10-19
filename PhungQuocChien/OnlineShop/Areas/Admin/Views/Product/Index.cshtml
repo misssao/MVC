@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OnlineShop.Context.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avartar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shortDes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avartar)
+            @*<img src="~/home_shoppe-web_Free26-10-2017_607046700/web/images/@item.avartar" alt="" />*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shortDes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+</table>

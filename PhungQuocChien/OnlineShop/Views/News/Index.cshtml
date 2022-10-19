@@ -1,0 +1,31 @@
+﻿@model List<OnlineShop.Context.News>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="main">
+    <div class="content">
+        @foreach (var item in Model)
+        {
+            <div class="image group">
+                <div class="grid images_3_of_1">
+                    <img src="~/home_shoppe-web_Free26-10-2017_607046700/web/images/@item.avartar" alt="" />
+                </div>
+                <div class="grid news_desc">
+                    <h3>@item.name</h3>
+                    <h4>@item.shortDes</h4>
+                    <p>@item.fullDescription</p>
+                </div>
+            </div>
+        }
+        <div class="content-pagenation">
+            <li><a href="#">Frist</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><span>....</span></li>
+            <li><a href="#">Last</a></li>
+            <div class="clear"> </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68164F81-1744-4FAE-9070-017B1138D3E9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineShop</RootNamespace>
+    <AssemblyName>OnlineShop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>a6a8d9e9</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Context\Category.cs">
+      <DependentUpon>DbConntextModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DbConntextModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbConntextModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DbConntextModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbConntextModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DbConntextModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbConntextModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\News.cs">
+      <DependentUpon>DbConntextModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Product.cs">
+      <DependentUpon>DbConntextModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category_Product.cs" />
+    <Compile Include="Models\ProductDetailModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.rtl.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.bundle.js" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.esm.js" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.esm.min.js" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.js" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\font\Amble-Regular-webfont.ttf" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\Thumbs.db" />
+    <EntityDeploy Include="Context\DbConntextModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbConntextModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Context\DbConntextModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbConntextModel.edmx</DependentUpon>
+      <LastGenOutput>DbConntextModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Context\DbConntextModel.edmx.diagram">
+      <DependentUpon>DbConntextModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Context\DbConntextModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbConntextModel.edmx</DependentUpon>
+      <LastGenOutput>DbConntextModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.esm.js.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.js.map" />
+    <Content Include="Areas\bootstrap-5.2.2-dist\bootstrap-5.2.2-dist\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\about.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\contact.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\css\easy-responsive-tabs.css" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\css\global.css" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\css\slider.css" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\css\style.css" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\delivery.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\about_img.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\arrow-next.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\arrow-prev.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\arrow_up.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\compare.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\delivery-img1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\delivery-img2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\delivery-img3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\dribbble.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\drop_arrow-hover.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\drop_arrow.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\facebook.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\feature-pic1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\feature-pic2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\feature-pic3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\feature-pic4.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\linkedin.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\list-img.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\logo.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\new-pic1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\new-pic2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\new-pic3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\new-pic4.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\newsimg1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\newsimg2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\newsimg3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\preview.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\price-rating.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-4.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-5.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\productslide-6.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\quality-rating.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\search.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\skype.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\slide-1-image.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\slide-2-image.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\slide-3-image.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\tag.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-1.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-2.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-3.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-4.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-5.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\thumbnailslide-6.jpg" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\twitter.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\value-rating.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\images\wishlist.png" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\index.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\easing.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\easyResponsiveTabs.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\jquery-1.7.2.min.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\jquery.accordion.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\jquery.easing.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\move-top.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\script.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\slides.min.jquery.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\js\startstop-slider.js" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\news.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\preview.html" />
+    <Content Include="home_shoppe-web_Free26-10-2017_607046700\web\w3layouts-License.txt" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_HeaderSlide.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56496</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56496/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

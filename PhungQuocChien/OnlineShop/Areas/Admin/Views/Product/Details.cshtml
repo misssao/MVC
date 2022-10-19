@@ -1,0 +1,23 @@
+﻿@model OnlineShop.Context.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container bg-light">
+    <div class="row">
+        <div class="col-4">
+            <div style="width: 300px; margin: 0 auto">
+                <img src="~/home_shoppe-web_Free26-10-2017_607046700/web/images/@Model.avartar" width="100%" />
+            </div>
+        </div>
+        <div class="col-8">
+            <p class="">@Model.name</p>
+            <div>@Model.price VND</div>
+            <div>
+                <p>Mô tả ngắn: @Model.shortDes</p>
+                <p>Mô tả đầy đủ: @Model.fullDescription</p>
+            </div>
+        </div>
+    </div>
+</div>
