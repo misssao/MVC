@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "DanhMucSanPhamTheoMa";
+    Layout = "~/Views/Shared/LayoutMaster.cshtml";
+}
+
+@using PhungQuocChien_2001190438.Models
+
+@{ IEnumerable<NongSan> lstNongSan = (IEnumerable<NongSan>)ViewBag.lstNongSan;}
+
+@Html.Partial("SanPhamPartial", lstNongSan)

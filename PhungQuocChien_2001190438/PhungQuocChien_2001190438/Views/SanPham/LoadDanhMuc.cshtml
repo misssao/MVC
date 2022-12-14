@@ -1,0 +1,8 @@
+﻿@model IEnumerable<PhungQuocChien_2001190438.Models.DanhMuc>
+
+@foreach (var item in Model)
+{
+    <li class="nav-item mx-0 mx-lg-1">
+        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/SanPham/DanhMucSanPhamTheoMa/@item.MaDanhMuc">@item.TenDanhMuc</a>
+    </li>
+}

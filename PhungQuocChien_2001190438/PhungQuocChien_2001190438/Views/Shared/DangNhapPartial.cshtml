@@ -1,0 +1,30 @@
+﻿@using PhungQuocChien_2001190438.Models
+<div id="popup_login">
+    <main>
+        @if (Session["TaiKhoan"] != null && Session["TaiKhoan"] != "")
+        {
+            KhachHang kh = (KhachHang)Session["TaiKhoan"];
+            <script>
+                var btn = $("#btnDangNhap");
+                btn.text("Xin chao @kh.TenKH");
+            </script>
+        }
+        <div class="row-form">
+            <div class="colm-form">
+                <div class="form-container position-relative">
+                    <div class="img-close" id="close-form">
+                        <img src="~/Hinhanh/—Pngtree—vector cross icon_4256864.png" class="w-100" />
+                    </div>
+                    @using (Html.BeginForm("DangNhap", "SanPham"))
+                    {
+                        <input type="text" class="taiKhoan" name="txtTenDN" placeholder="Tên đăng nhập">
+                        <input type="password" class="matKhau" name="txtMatKhau" placeholder="Mật khẩu">
+                        <button class="btn-login" id="dangNhap">Đăng nhập</button>
+                        <a href="#">Quên mật khẩu?</a>
+                        <button class="btn-new">Tạo tài khoản mới</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,53 @@
+﻿@using PhungQuocChien_2001190438.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Shared/LayoutMaster.cshtml";
+}
+
+@if(Model == null || Model.Count == 0)
+{
+    <h1 class="text-warning">Giỏ hàng rỗng</h1>
+}
+else
+{
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Đơn giá</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Thành tiền</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="w-50">
+                            <img src="~/Hinhanh/@item.Hinh" class="w-100" />
+                        </div>
+                    </th>
+                    <td>@item.TenSP</td>
+                    <td>@item.DonGia</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.ThanhTien</td>
+                    <td>
+                        @Html.ActionLink("Sửa", "SuaGioHang", new {@MaSP = item.MaSP})
+                        @Html.ActionLink("Xóa", "XoaGioHang", new { @MaSP = item.MaSP })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="divDatHang text-end">
+        @using(Html.BeginForm("DatHang", "GioHang"))
+        {
+            <input type="submit" class="btn btn-danger mb-3" value="Đặt hàng"/>
+            <a href="/SanPham/DanhMucSanPham" class="btn btn-success btn-sm">Mua tiếp</a>
+        }
+    </div>
+}
